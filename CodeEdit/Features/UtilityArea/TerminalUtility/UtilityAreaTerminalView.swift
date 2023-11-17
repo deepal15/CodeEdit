@@ -124,10 +124,7 @@ struct UtilityAreaTerminalView: View {
         UtilityAreaTabView { tabState in
             ZStack {
                 if model.selectedTerminals.isEmpty {
-                    Text("No Selection")
-                        .font(.system(size: 16))
-                        .foregroundColor(.secondary)
-                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    CEContentUnavailableView("No Selection")
                 }
                 ForEach(model.terminals) { terminal in
                     TerminalEmulatorView(
