@@ -32,7 +32,11 @@ struct FindNavigatorView: View {
                     .font(.system(size: 10))
             }
             Divider()
-            FindNavigatorResultList()
+            if state.searchResultCount == 0 {
+                CEContentUnavailableView("No Results")
+            } else {
+                FindNavigatorResultList()
+            }
         }
         .safeAreaInset(edge: .bottom, spacing: 0) {
             FindNavigatorToolbarBottom()
